@@ -1,0 +1,20 @@
+<div class="card">
+<h5><b>Add a comment:</b></h5>
+<%= form_with model: [@article, @article.comments.build ] do |form| %>
+    <div class="card-body">
+    
+    <div>
+        <%= form.label :Commenter %><br>
+        <%= form.text_field :commenter%>
+    </div>
+     <div>
+        <%= form.label :Comment %><br>
+        <%= form.text_area :body %>
+    </div>
+    
+      <div>
+      <%= form.submit class:"btn btn-sm btn-info" %>
+    </div>
+</div>
+<% end %>
+</div>

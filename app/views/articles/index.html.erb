@@ -1,0 +1,31 @@
+<div class="content" style="max-width:1400px">
+<!-- Header -->
+<header class="container" align="center"> 
+  <h1><b>MY BLOG</b></h1>
+  <p>Welcome to the blog app</p>
+</header>
+
+<% @articles.each do |article| %>
+<!-- Blog entries -->
+<div class="col">
+  <!-- Blog entry -->
+  <div class="card">
+        <div class="card-body">
+          <h3><b><%= link_to article.title , article %></b></h3>
+          <h5 align="right">
+            <span>
+            <%= time_tag article.created_at, "data-local": "time-ago"%>
+            </span>
+          </h5>
+        </div>
+   </div>
+<hr>
+<!--loop end here-->
+<%end%>
+</div>
+</div>
+
+<%= paginate @articles, outer_window: 3  %>
+
+
+ 
