@@ -1,0 +1,7 @@
+<pre>
+    <strong><%= comment.commenter%></strong>
+    <%= comment.body %>
+  </pre>
+
+<%= link_to "Remove", [comment.article, comment],
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
